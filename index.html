@@ -3,53 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Essentials Test</title>
+<title>Copy Test</title>
 <style>
-  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 760px; margin: 24px auto; padding: 0 16px; color: #1d2433; background: #fff; line-height: 1.5; }
-  h1 { font-size: 22px; margin-bottom: 4px; }
-  .stamp { font-size: 13px; color: #5a6475; margin-bottom: 20px; }
-  .box-red { border-left: 4px solid #b3261e; background: #fbeaea; padding: 10px 14px; margin: 16px 0; }
-  details { border: 1px solid #c9d1de; border-radius: 6px; padding: 6px 12px; margin: 12px 0; background: #f6f8fb; }
-  summary { cursor: pointer; font-weight: 600; color: #2f5590; }
-  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 14px; }
-  th, td { border: 1px solid #c9d1de; padding: 6px 8px; text-align: left; }
-  th { background: #eef2f8; }
-  ol li { margin: 6px 0; }
-  .result { font-size: 13px; color: #5a6475; }
+  body{font-family:Segoe UI,Arial,sans-serif;max-width:760px;margin:24px auto;padding:0 16px;color:#1f2937;background:#fff;line-height:1.5}
+  h1{font-size:20px;margin-bottom:4px} h2{font-size:15px;margin:28px 0 6px}
+  .note{font-size:13px;color:#6b7280}
+  .box{border:1px solid #94a3b8;border-radius:6px;padding:10px 12px;background:#f8fafc;font-size:14px}
+  .one-click{user-select:all;-webkit-user-select:all;cursor:copy}
+  .one-click:hover{background:#eef2ff}
+  .pre{white-space:pre-wrap}
+  textarea{width:100%;box-sizing:border-box;height:130px;font:14px Segoe UI,Arial,sans-serif;padding:10px;border:1px solid #94a3b8;border-radius:6px}
+  table{border-collapse:collapse;font-size:14px} td,th{border:1px solid #94a3b8;padding:4px 8px;text-align:left}
+  ol{font-size:14px}
+  .fn-ref{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;margin:0 1px 0 3px;padding:0;border-radius:50%;background:#e0f2fe;color:#0369a1;border:1px solid #7dd3fc;font:italic 700 10px/1 Georgia,serif;cursor:pointer;vertical-align:2px}
+  .fn-pop{max-width:360px;margin:auto;border:1px solid #cbd5e1;border-left:3px solid #0369a1;border-radius:6px;padding:10px 12px;font:13px/1.5 Segoe UI,Arial,sans-serif;color:#374151;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+  .ov{display:none;position:fixed;inset:0;z-index:50;background:#fff;overflow:auto;padding:16px 20px}
+  .ov:target{display:block}
+  .ov-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .ov-bar a{font-size:14px}
+  .no-sel{user-select:none;-webkit-user-select:none}
+  .xnote{display:block;margin-top:4px;font-size:12px;color:#0c4a6e;border-left:2px solid #0369a1;padding-left:6px}
+  details.fn-inline{display:inline}
+  details.fn-inline summary{display:inline-flex;list-style:none}
+  details.fn-inline summary::-webkit-details-marker{display:none}
+  details.fn-inline .fn-body{display:block;margin:6px 0 2px;border-left:3px solid #0369a1;background:#f0f9ff;padding:6px 10px;font-size:13px;color:#374151}
 </style>
 </head>
 <body>
+<h1>Copy Test</h1>
+<p class="note">No scripts on this page. Sample text only; the wording means nothing. For each block, copy it and paste into an Agility note (and into Notepad if you can), then check the list at the bottom.</p>
 
-<h1>Essentials — hospital computer test</h1>
-<div class="stamp">Test page · no scripts · 2026-11-06</div>
+<h2>A. One click selects the whole block</h2>
+<p class="note">Click once anywhere in the box, then Ctrl+C.</p>
+<div class="box one-click pre"><strong>SAMPLE HEADING</strong>
+Line one of sample text.
+Line two with a blank to fill: ____________
+Line three with a choice: [Option A / Option B / Option C]
+- A dash item
+- A second dash item
+Last line.</div>
 
-<p>On this computer, check each item. If everything below displays and works, Essentials will work here.</p>
+<h2>B. Ordinary selection</h2>
+<p class="note">Drag to select (or triple-click a line), then Ctrl+C.</p>
+<div class="box pre"><strong>SAMPLE HEADING</strong>
+Line one of sample text.
+Line two with a blank to fill: ____________
+Line three with a choice: [Option A / Option B / Option C]
+- A dash item
+- A second dash item
+Last line.</div>
 
+<h2>C. Read-only text box</h2>
+<p class="note">Click inside, Ctrl+A (selects only the box), then Ctrl+C.</p>
+<textarea readonly>SAMPLE HEADING
+Line one of sample text.
+Line two with a blank to fill: ____________
+Line three with a choice: [Option A / Option B / Option C]
+- A dash item
+- A second dash item
+Last line.</textarea>
+
+<h2>D. A small table (one click)</h2>
+<div class="one-click" style="display:inline-block">
+<table><tr><th>Column 1</th><th>Column 2</th></tr><tr><td>Row 1</td><td>Sample</td></tr><tr><td>Row 2</td><td>Sample</td></tr></table>
+</div>
+
+<h2>E. ⓘ note, browser popover</h2>
+<p class="note">Tap the ⓘ. A note box should open over the page; tap anywhere else (or press Esc) to close it. If the note is already showing below the sentence before you tap, this browser is too old for this kind.</p>
+<p class="box">A sample sentence the provider acts on.<button class="fn-ref" popovertarget="note-e" aria-label="More">i</button></p>
+<div id="note-e" class="fn-pop" popover>Sample explanation that would sit behind the ⓘ. Two short sentences of background.</div>
+
+<h2>F. ⓘ note, opens in line</h2>
+<p class="note">Tap the ⓘ. The note should open right under the sentence and push the text below it down; tap the ⓘ again to close it.</p>
+<div class="box">A sample sentence the provider acts on.<details class="fn-inline"><summary class="fn-ref" aria-label="More">i</summary><span class="fn-body">Sample explanation that would sit behind the ⓘ. Two short sentences of background.</span></details> More text after the note.</div>
+
+<h2 id="g">G. Full table, no script</h2>
+<p class="note">The compact table has an ⓘ (not clickable here). Tap <strong>Full table</strong>: the whole screen should show the table with the note written out in its cell. Close with <strong>Close</strong> or the browser's Back button; you should land back here. Try dragging across either table: nothing should highlight.</p>
+<table class="no-sel"><tr><th>When</th><th>Column A</th><th>Column B</th></tr><tr><td>First visit</td><td>Sample order<span class="fn-ref">i</span></td><td>Sample</td></tr><tr><td>1 month</td><td>Sample</td><td>Sample</td></tr></table>
+<p><a href="#full-g">Full table</a></p>
+<div id="full-g" class="ov">
+<div class="ov-bar"><strong>Sample table, full window</strong><a href="#g">Close</a></div>
+<table class="no-sel"><tr><th>When</th><th>Column A</th><th>Column B</th><th>Column C</th><th>Column D</th></tr><tr><td>First visit</td><td>Sample order<span class="xnote">Sample note text that sits behind the ⓘ on the compact table, written out here.</span></td><td>Sample</td><td>Sample</td><td>Sample</td></tr><tr><td>1 month</td><td>Sample</td><td>Sample</td><td>Sample</td><td>Sample</td></tr></table>
+</div>
+
+<h2>What to check</h2>
 <ol>
-  <li id="t1"><strong>The page opened.</strong> (The address loads; the filter allows it.)</li>
-  <li id="t2"><strong>The red box shows with its red bar:</strong>
-    <div class="box-red"><strong>Sample warning.</strong> This is how a must-not-miss box will look.</div>
-  </li>
-  <li id="t3"><strong>The ⓘ note opens and closes when clicked:</strong>
-    <details>
-      <summary>ⓘ Sample note</summary>
-      <p>If you can read this after clicking, the ⓘ notes work on this computer. Click the heading again to close it.</p>
-    </details>
-  </li>
-  <li id="t4"><strong>The table shows with borders and a shaded header:</strong>
-    <table>
-      <tr><th>Column A</th><th>Column B</th></tr>
-      <tr><td>Row 1</td><td>Value</td></tr>
-      <tr><td>Row 2</td><td>Value</td></tr>
-    </table>
-  </li>
-  <li id="t5"><strong>This link jumps within the page:</strong> <a href="#t2">go to item 2</a></li>
-  <li id="t6"><strong>This outside link opens:</strong> <a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener">FMCSA (opens a new tab)</a></li>
-  <li id="t7"><strong>Ctrl+F finds the word "sample"</strong> (this is how search works without scripts).</li>
+<li>A: did one click select the whole box?</li>
+<li>Did each paste keep the line breaks and the blank line ( ____ )?</li>
+<li>Did the bold heading paste as bold, or as plain text? (Plain is fine; just note which.)</li>
+<li>Did C's text box paste cleanly, with nothing from the page around it?</li>
+<li>D: did the table paste as a table, as tab-separated text, or as a mess?</li>
+<li>Which of A, B or C would you use under time pressure?</li>
+<li>E: did the note open over the page and close when you tapped elsewhere, or was it already showing?</li>
+<li>F: did the note open under the sentence and close on a second tap?</li>
+<li>E or F: which reads better at the point of care?</li>
+<li>G: did the full table fill the screen, did Close and Back both return you to G, and was neither table selectable?</li>
 </ol>
-
-<p class="result">If the ⓘ note shows already open and cannot be closed, the browser is very old; nothing is lost, it is only less tidy.</p>
-
 </body>
 </html>
